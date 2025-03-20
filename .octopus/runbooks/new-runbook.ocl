@@ -21,7 +21,7 @@ process {
             action_type = "Octopus.Script"
             properties = {
                 Octopus.Action.RunOnServer = "false"
-                Octopus.Action.Script.ScriptBody = "write-host 'hi'"
+                Octopus.Action.Script.ScriptBody = "write-host 'sup dog'"
                 Octopus.Action.Script.ScriptSource = "Inline"
                 Octopus.Action.Script.Syntax = "PowerShell"
                 OctopusUseBundledTooling = "False"
