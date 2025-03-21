@@ -11,6 +11,20 @@ run_retention_policy {
 }
 
 process {
+    step "manual-intervention-required" {
+        name = "Manual Intervention Required"
+
+        action {
+            action_type = "Octopus.Manual"
+            properties = {
+                Octopus.Action.Manual.BlockConcurrentDeployments = "False"
+                Octopus.Action.Manual.Instructions = "Do the needful"
+                Octopus.Action.Manual.ResponsibleTeamIds = "global/octopus-managers"
+                Octopus.Action.RunOnServer = "false"
+            }
+        }
+    }
+
     step "run-a-script" {
         name = "Run a Script"
         properties = {
@@ -54,19 +68,6 @@ process {
                 properties = {
                     SelectionMode = "immediate"
                 }
-            }
-        }
-    }
-
-    step "manual-intervention-required" {
-        name = "Manual Intervention Required"
-
-        action {
-            action_type = "Octopus.Manual"
-            properties = {
-                Octopus.Action.Manual.BlockConcurrentDeployments = "False"
-                Octopus.Action.Manual.Instructions = "Do the needful"
-                Octopus.Action.Manual.ResponsibleTeamIds = "global/octopus-managers"
             }
         }
     }
