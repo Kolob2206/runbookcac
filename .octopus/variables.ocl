@@ -1,0 +1,7 @@
+variable "Worker.Pool" {
+    type = "WorkerPool"
+
+    value "default-worker-pool" {
+        process = ["runbook/new-runbook"]
+    }
+}
