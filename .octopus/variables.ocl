@@ -4,4 +4,9 @@ variable "Worker.Pool" {
     value "default-worker-pool" {
         process = ["runbook/new-runbook"]
     }
+
+    value "azure-workers" {
+        description = ""
+        environment = ["qa"]
+    }
 }
