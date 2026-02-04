@@ -10,3 +10,11 @@ variable "Worker.Pool" {
         environment = ["qa"]
     }
 }
+
+variable "OctopusPrintEvaluatedVariables" {
+    value "True" {}
+}
+
+variable "OctopusPrintVariables" {
+    value "True" {}
+}
